@@ -1,0 +1,268 @@
+/* Gao Meng */
+
+/* init */
+*{
+	position: relative;
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+	border: none;
+	text-decoration: none;
+	box-sizing:border-box;
+}
+
+a{
+	display: block;
+}
+
+.hidden{
+	display: none;
+}
+
+/* main */
+
+body{
+	width: 100%;
+	background-color: #fbfbfb;
+}
+
+.wrapper{
+	width: 1080px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.wrapper_help{
+	width: 1120px;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+/* header */
+
+header{
+	width: 100%;
+	height: 74px;
+	margin-bottom: 50px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+	height: 74px;
+	line-height: 74px;
+	background-color: #039BE5;
+	width: 200px;
+	padding: 0 20px;
+	float: left;
+	font-size: 27px;
+	color: white;
+	box-shadow: 5px 0 0 0 #FFEB3B, 10px 0 0 0 #F44336;
+	cursor:default;
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select:none;
+	-khtml-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+.logout{
+	height: 74px;
+	width: 74px;
+	line-height: 74px;
+	background-image: url(../img/logout.png);
+	background-position:center;
+	background-size: 25px 25px;
+	background-repeat: no-repeat;
+	background-color: #F44336;
+	float: right;
+	transition: box-shadow 0.3s;
+}
+
+.logout:hover{
+	background-color: #F44336;
+	box-shadow: -5px 0 0 0 #FDD835, 5px 0 0 0 #FDD835;
+}
+
+/* main */
+
+.main{
+	width: 100%;
+}
+
+.card{
+	float: left;
+	overflow: hidden;
+	width: 200px;
+	height: 150px;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 30px;
+	background-color: #eee;
+	box-shadow: 0px 0px 7px rgba(0,0,0,0.3);
+	transition: box-shadow 0.2s, transform 0.2s;
+	background-position:center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.card:hover{
+	box-shadow: 3px 3px 25px rgba(0,0,0,0.4);
+	transform: scale(1.04, 1.04);
+}
+
+.add{
+	background-image: url(../img/add.png);
+	background-position:center;
+	background-size: 100px 100px;
+	background-repeat: no-repeat;
+	background-color: #fefefe;
+}
+.add:hover{
+	transform: scale(1,1)!important;
+}
+
+.controller_bar{
+	width: 100%;
+	height: 25px;
+	background-color: #039BE5;
+	bottom: 0;
+	position: absolute;
+	line-height: 25px;
+	padding: 0 5px 0 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.fl_name{
+	color: #fbfbfb;
+	width: 150px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	float: left;
+	font-size: 14px;
+}
+
+.delete{
+	float: right;
+	height: 24px;
+	width: 32px;
+	opacity: 0.7;
+	background-image: url(../img/delete.png);
+	background-position:center;
+	background-size: 18px 18px;
+	background-repeat: no-repeat;
+}
+
+.delete:hover{
+	background-image: url(../img/delete.png);
+	opacity: 1;
+}
+
+
+.clear{
+	clear: both;
+}
+
+#full{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.6);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+}
+
+#full_img{
+	height: 500px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: -250px;
+	top: 50%;
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.3), 0px 0px 100px rgba(0,0,0,0.6);
+}
+
+@keyframes full_img_trans
+{
+	0%		{background-color: rgba(0,0,0,0.1);}
+	10%		{background-color: rgba(0,0,0,0.3);}
+	30%		{background-color: rgba(0,0,0,0.5);}
+	100%	{background-color: rgba(0,0,0,0.6);}
+}
+
+.full_img_trans{
+	animation: full_img_trans 0.5s;
+}
+
+@keyframes full_img_trans_bac
+{
+	100%	{background-color: rgba(0,0,0,0.6);}
+	30%		{background-color: rgba(0,0,0,0.5);}
+	10%		{background-color: rgba(0,0,0,0.3);}
+	0%		{background-color: rgba(0,0,0,0);}
+}
+.full_img_trans_bac{
+	animation: full_img_trans_bac 0.5s;
+}
+
+
+/* =================================================================== */
+.login_panel{
+	width: 220px;
+	height: 180px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: -90px;
+	top: 50%;
+	text-align: left;
+}
+#login_wrapper{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+}
+
+#username{
+	height: 30px;
+	width: 200px;
+	background-color: #00BFA5;
+	margin-top: 5px;
+	color: white;
+	padding: 0 10px;
+	line-height: 20px;
+	font-size: 14px;
+}
+
+#password{
+	height: 30px;
+	width: 200px;
+	background-color: #00E676;
+	margin-top: 5px;
+	color: white;
+	padding: 0 10px;
+	line-height: 20px;
+	font-size: 14px;
+}
+
+#submit{
+	height: 30px;
+	width: 100px;
+	background-color: #00C853;
+	margin-top: 5px;
+	color: white;
+	padding: 0 10px;
+}
+
+::-webkit-input-placeholder{
+	color: white;
+	line-height: 20px;
+	font-size: 14px;
+}
