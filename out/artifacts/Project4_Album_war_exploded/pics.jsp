@@ -64,7 +64,7 @@
 							String sdelete="<a class=\"delete\" href='photo?action=deletePhoto&albumid="
 									+albumid+"&id="+p.getPhotoid()+"' onclick=\"event.cancelBubble=true;\"></a> ";
 							String supdate="<a class=\"edit\" onclick=\"event.cancelBubble=true;" +
-									"edit_name('photo?action=updatePhoto&albumid="+albumid+"&id="+p.getPhotoid()+"');\"></a> ";
+									"edit_name('photo?action=updatePhoto&albumid="+albumid+"&photoid="+p.getPhotoid()+"');\"></a> ";
 							String s_end="<div class=\"clear\"></div>\n" +
 									"\t\t\t\t\t</div>\n" +
 									"\t\t\t\t</div>";

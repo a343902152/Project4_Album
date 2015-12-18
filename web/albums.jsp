@@ -15,7 +15,6 @@
 			<a class="logout" href="user?action=logout"></a> <!-- 退出登录，修改url -->
 		</div>
 	</header>
-
 	<%!
 		String userid;
 	%>
@@ -61,7 +60,6 @@
 				<input id="submit_new_name" type="submit" value="submit" onclick="event.cancelBubble=true;" />
 			</form>
 		</div>
-		
 	</div>
 
 	<!-- 这是添加图片使用的表单，始终隐藏，不要修改action以外的属性 -->

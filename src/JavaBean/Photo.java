@@ -11,6 +11,7 @@ public class Photo {
     private String albumname;
     private String url;
 
+    public Photo(){}
     public String getAlbumid() {
         return albumid;
     }
@@ -25,8 +26,6 @@ public class Photo {
         this.photoid = photoid;
         this.photoname = photoname;
         this.albumname = albumname;
-
-        url=userid+"/"+albumname+"/"+photoname;
     }
 
     public String getUserid() {
@@ -63,6 +62,7 @@ public class Photo {
     }
 
     public String getUrl() {
+        url=userid+"/"+albumname+"/"+photoname;
         return url;
     }
 

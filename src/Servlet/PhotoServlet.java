@@ -195,56 +195,40 @@ public class PhotoServlet extends HttpServlet {
     public void doUpdatePhoto(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String userid=(String)request.getSession().getAttribute("userid"); // 保障图片不会被乱删
-        String photoid=request.getParameter("id");
+        String photoid=request.getParameter("photoid");
         String albumid=request.getParameter("albumid");
         String newPhotoname=request.getParameter("new_name");
         String albumname=(String)request.getSession().getAttribute("album_name");
-        String cururl="null";
 
-        System.out.println(Integer.parseInt(photoid));
+        System.out.println(userid+" "+photoid+" "+albumid+" "+newPhotoname+" "+albumname);
         try {
             String sqlGetPhotoUrl="select * from photos where photoid=?";
             PreparedStatement selectpst=dbConn.prepareStatement(sqlGetPhotoUrl);
             selectpst.setString(1,photoid);
             ResultSet resultSet=selectpst.executeQuery();
+            Photo photo=new Photo();
             if(resultSet.next()){
-                cururl=resultSet.getString(5);
+                photo=new Photo(resultSet.getString(1),resultSet.getString(2),
+                        resultSet.getString(3),resultSet.getString(4),resultSet.getString(5));
             }
-            String[] arrs=cururl.split("\\.");
-            String filetype=arrs[1];
-            String newurl=userid+"/"+albumname+"/"+newPhotoname+"."+filetype;
-            System.out.println("new url ="+newurl);
 
-
-            String sql="update photos set photoname=?,url=? where photoid=? and albumid=?";
+            String sql="update photos set photoname=? where photoid=? and albumid=?";
             PreparedStatement preparedStatement=dbConn.prepareStatement(sql);
             preparedStatement.setString(1,newPhotoname);
-            preparedStatement.setString(2,newurl);
-            preparedStatement.setInt(3, Integer.parseInt(photoid));
-            preparedStatement.setInt(4, Integer.parseInt(albumid));
+            preparedStatement.setString(2,photoid);
+            preparedStatement.setInt(3, Integer.parseInt(albumid));
             preparedStatement.executeUpdate();
 
             // 修改本地图片的名字
             String realpath = getServletContext().getRealPath("/") ;
-            String savePath=realpath+"\\upload\\images\\";
-            String curpath=savePath+"\\"+cururl;
-            System.out.println(curpath);
-            File file=new File(savePath+"\\"+cururl);
+            String curPath=realpath+"\\upload\\images\\"+photo.getUrl();
+            File file=new File(curPath);
             if(file.exists()){
-                String newPath=getServletContext().getRealPath("/")+"\\upload\\images\\"+newurl;
-                System.out.println(newPath);
-                file.renameTo(new File(getServletContext().getRealPath("/")+"\\upload\\images\\"+newurl));
+                photo.setPhotoname(newPhotoname);
+                String newPath=getServletContext().getRealPath("/")+"\\upload\\images\\"+photo.getUrl();
+                file.renameTo(new File(newPath));
             }
 
-//            // 显示相册名字到页面上
-//            String sqlSeleceAlbumName="select * from albums where albumid=?";
-//            PreparedStatement namePST=dbConn.prepareStatement(sqlSeleceAlbumName);
-//            namePST.setInt(1,Integer.parseInt(albumid));
-//            ResultSet res=namePST.executeQuery();
-//            String albumname="null";
-//            if(res.next()) {
-//                albumname = res.getString(3);
-//            }
             List<Photo> photoList=getPhotoList(albumid);
             request.getSession().setAttribute("albumid",albumid);
             request.setAttribute("photo_list", photoList);
@@ -253,7 +237,6 @@ public class PhotoServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     private List<Photo> getPhotoList(String albumid){
