@@ -12,6 +12,8 @@ import java.util.List;
 
 /**
  * Created by hp on 2015/12/14.
+ * 根据userid获取albumlist
+ * 根据albumid获取photolist
  */
 public class AlbumTools {
 

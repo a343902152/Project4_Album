@@ -29,60 +29,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Servlet/UserServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="30" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="30" />
-              <folding>
-                <marker date="1450440595943" expanded="true" signature="2774:2818" placeholder="select * fro..users..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PhotoServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Servlet/PhotoServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="230" column="13" selection-start-line="230" selection-start-column="13" selection-end-line="230" selection-end-column="13" />
+              <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="76" />
               <folding>
-                <marker date="1450439215954" expanded="true" signature="3906:3976" placeholder="insert into ..." />
-                <marker date="1450439215954" expanded="true" signature="5440:5476" placeholder="select * fro..photos..." />
-                <marker date="1450439215954" expanded="true" signature="5887:5934" placeholder="delete from ..." />
-                <marker date="1450439215954" expanded="true" signature="7723:7759" placeholder="select * fro..photos..." />
-                <marker date="1450439215954" expanded="true" signature="8229:8288" placeholder="update photo..." />
+                <marker date="1450441163460" expanded="true" signature="3814:3884" placeholder="insert into ..." />
+                <marker date="1450441163460" expanded="true" signature="5347:5383" placeholder="select * fro..photos..." />
+                <marker date="1450441163460" expanded="true" signature="5794:5841" placeholder="delete from ..." />
+                <marker date="1450441163460" expanded="true" signature="7630:7666" placeholder="select * fro..photos..." />
+                <marker date="1450441163460" expanded="true" signature="8136:8195" placeholder="update photo..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pics.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/pics.jsp">
+      <file leaf-file-name="AlbumServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Servlet/AlbumServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.70546734">
-              <caret line="44" column="71" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="71" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="166" column="8" selection-start-line="166" selection-start-column="8" selection-end-line="175" selection-end-column="9" />
+              <folding>
+                <marker date="1450442202357" expanded="true" signature="2180:2238" placeholder="update album..." />
+                <marker date="1450442202357" expanded="true" signature="2291:2327" placeholder="select * fro..albums..." />
+                <marker date="1450442202357" expanded="true" signature="4455:4489" placeholder="delete from ..." />
+                <marker date="1450442202357" expanded="true" signature="4699:4746" placeholder="delete from ..." />
+                <marker date="1450442202357" expanded="true" signature="5840:5888" placeholder="insert into ..." />
+                <marker date="1450442202357" expanded="true" signature="7422:7458" placeholder="select * fro..albums..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="albums.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/albums.jsp">
+      <file leaf-file-name="AlbumTools.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/AlbumTools.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.5172415">
-              <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+              <folding>
+                <element signature="e#650#657#0" expanded="true" />
+                <element signature="e#2142#2149#0" expanded="true" />
+                <marker date="1450441201096" expanded="true" signature="574:609" placeholder="select * fro..albums..." />
+                <marker date="1450441201096" expanded="true" signature="1158:1194" placeholder="select * fro..photos..." />
+                <marker date="1450441201096" expanded="true" signature="2020:2056" placeholder="select * fro..photos..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,25 +85,59 @@
               <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
               <folding>
                 <element signature="e#906#907#0" expanded="true" />
-                <element signature="e#960#961#0" expanded="true" />
-                <element signature="e#1006#1007#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlbumTools.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/AlbumTools.java">
+      <file leaf-file-name="albums.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/albums.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.862069">
+              <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.5172415">
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Servlet/UserServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47360247">
+              <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
+              <folding>
+                <marker date="1450442343834" expanded="true" signature="2795:2839" placeholder="select * fro..users..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Photo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/JavaBean/Photo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-              <folding>
-                <element signature="e#603#610#0" expanded="true" />
-                <element signature="e#2095#2102#0" expanded="true" />
-                <marker date="1450440177954" expanded="true" signature="527:562" placeholder="select * fro..albums..." />
-                <marker date="1450440177954" expanded="true" signature="1111:1147" placeholder="select * fro..photos..." />
-                <marker date="1450440177954" expanded="true" signature="1973:2009" placeholder="select * fro..photos..." />
-              </folding>
+              <caret line="64" column="47" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyDatabase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/MyDatabase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,7 +161,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/domain/Album.java" />
-        <option value="$PROJECT_DIR$/src/dao/MyDatabase.java" />
         <option value="$PROJECT_DIR$/src/domain/Photo.java" />
         <option value="$PROJECT_DIR$/src/UserServlet.java" />
         <option value="$PROJECT_DIR$/web/list.jsp" />
@@ -150,16 +174,17 @@
         <option value="$PROJECT_DIR$/web/albumList.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/web/photoList.jsp" />
-        <option value="$PROJECT_DIR$/src/Servlet/AlbumServlet.java" />
         <option value="$PROJECT_DIR$/src/JavaBean/Photo.java" />
-        <option value="$PROJECT_DIR$/src/Servlet/PhotoServlet.java" />
         <option value="$PROJECT_DIR$/src/JavaBean/Album.java" />
-        <option value="$PROJECT_DIR$/src/dao/AlbumTools.java" />
-        <option value="$PROJECT_DIR$/web/albums.jsp" />
-        <option value="$PROJECT_DIR$/src/Servlet/UserServlet.java" />
         <option value="$PROJECT_DIR$/web/pics.jsp" />
+        <option value="$PROJECT_DIR$/src/Servlet/PhotoServlet.java" />
+        <option value="$PROJECT_DIR$/src/dao/AlbumTools.java" />
+        <option value="$PROJECT_DIR$/src/dao/MyDatabase.java" />
+        <option value="$PROJECT_DIR$/web/albums.jsp" />
+        <option value="$PROJECT_DIR$/web/login.jsp" />
+        <option value="$PROJECT_DIR$/src/Servlet/AlbumServlet.java" />
+        <option value="$PROJECT_DIR$/src/Servlet/UserServlet.java" />
       </list>
     </option>
   </component>
@@ -258,69 +283,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Servlet" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -425,38 +392,12 @@
               <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album" />
+              <option name="myItemId" value="b" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album_war_exploded" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="a" />
+              <option name="myItemId" value="newnewnew" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -490,49 +431,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="a" />
+              <option name="myItemId" value="b" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album_war_exploded" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="a" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="newnew" />
+              <option name="myItemId" value="album2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -567,48 +470,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="a" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project4_Album_war_exploded" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="a" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="abc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1012,12 +873,12 @@
       <workItem from="1450417083794" duration="861000" />
       <workItem from="1450418690007" duration="4252000" />
       <workItem from="1450423714731" duration="1972000" />
-      <workItem from="1450431417222" duration="7199000" />
+      <workItem from="1450431417222" duration="9201000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87879000" />
+    <option name="totallyTimeSpent" value="89881000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1029,7 +890,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1041,7 +902,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869378" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3308351" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27944326" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18869936" sideWeight="0.4879154" order="0" side_tool="false" content_ui="combo" />
@@ -1087,11 +948,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
           <folding>
-            <marker date="1450439215954" expanded="true" signature="3906:3976" placeholder="insert into ..." />
-            <marker date="1450439215954" expanded="true" signature="5440:5476" placeholder="select * fro..photos..." />
-            <marker date="1450439215954" expanded="true" signature="5887:5934" placeholder="delete from ..." />
-            <marker date="1450439215954" expanded="true" signature="7723:7759" placeholder="select * fro..photos..." />
-            <marker date="1450439215954" expanded="true" signature="8229:8288" placeholder="update photo..." />
+            <marker date="1450441163460" expanded="true" signature="3814:3884" placeholder="insert into ..." />
+            <marker date="1450441163460" expanded="true" signature="5347:5383" placeholder="select * fro..photos..." />
+            <marker date="1450441163460" expanded="true" signature="5794:5841" placeholder="delete from ..." />
+            <marker date="1450441163460" expanded="true" signature="7630:7666" placeholder="select * fro..photos..." />
+            <marker date="1450441163460" expanded="true" signature="8136:8195" placeholder="update photo..." />
           </folding>
         </state>
       </provider>
@@ -1101,11 +962,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
           <folding>
-            <marker date="1450439215954" expanded="true" signature="3906:3976" placeholder="insert into ..." />
-            <marker date="1450439215954" expanded="true" signature="5440:5476" placeholder="select * fro..photos..." />
-            <marker date="1450439215954" expanded="true" signature="5887:5934" placeholder="delete from ..." />
-            <marker date="1450439215954" expanded="true" signature="7723:7759" placeholder="select * fro..photos..." />
-            <marker date="1450439215954" expanded="true" signature="8229:8288" placeholder="update photo..." />
+            <marker date="1450441163460" expanded="true" signature="3814:3884" placeholder="insert into ..." />
+            <marker date="1450441163460" expanded="true" signature="5347:5383" placeholder="select * fro..photos..." />
+            <marker date="1450441163460" expanded="true" signature="5794:5841" placeholder="delete from ..." />
+            <marker date="1450441163460" expanded="true" signature="7630:7666" placeholder="select * fro..photos..." />
+            <marker date="1450441163460" expanded="true" signature="8136:8195" placeholder="update photo..." />
           </folding>
         </state>
       </provider>
@@ -1144,7 +1005,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
           <folding>
-            <marker date="1450440595943" expanded="true" signature="2774:2818" placeholder="select * fro..users..." />
+            <marker date="1450442343834" expanded="true" signature="2795:2839" placeholder="select * fro..users..." />
           </folding>
         </state>
       </provider>
@@ -1154,15 +1015,29 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="67" column="51" selection-start-line="67" selection-start-column="51" selection-end-line="67" selection-end-column="51" />
           <folding>
-            <marker date="1450440595943" expanded="true" signature="2774:2818" placeholder="select * fro..users..." />
+            <marker date="1450442343834" expanded="true" signature="2795:2839" placeholder="select * fro..users..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/dao/MyDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JavaBean/Album.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JavaBean/Photo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1187,13 +1062,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/MyDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1212,48 +1080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/MyDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JavaBean/Album.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JavaBean/Photo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1268,13 +1094,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="84" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="84" />
         </state>
       </provider>
     </entry>
@@ -1306,13 +1125,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/MyDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41025642">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/static/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1321,40 +1133,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+    <entry file="file://$PROJECT_DIR$/web/pics.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6115108">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.2345679">
+          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Servlet/AlbumServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1391162">
-          <caret line="63" column="47" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
-          <folding>
-            <marker date="1450436863368" expanded="true" signature="-1:-1" placeholder="update album..." />
-            <marker date="1450436863368" expanded="true" signature="-1:-1" placeholder="select * fro..albums..." />
-            <marker date="1450436863368" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1450436863368" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1450436863368" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1450436863368" expanded="true" signature="-1:-1" placeholder="select * fro..albums..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.13259669">
           <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
           <folding />
         </state>
@@ -1362,22 +1151,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JavaBean/Photo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.658606">
+        <state vertical-scroll-proportion="0.0">
           <caret line="64" column="47" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Servlet/PhotoServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/MyDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="230" column="13" selection-start-line="230" selection-start-column="13" selection-end-line="230" selection-end-column="13" />
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/AlbumTools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
-            <marker date="1450439215954" expanded="true" signature="3906:3976" placeholder="insert into ..." />
-            <marker date="1450439215954" expanded="true" signature="5440:5476" placeholder="select * fro..photos..." />
-            <marker date="1450439215954" expanded="true" signature="5887:5934" placeholder="delete from ..." />
-            <marker date="1450439215954" expanded="true" signature="7723:7759" placeholder="select * fro..photos..." />
-            <marker date="1450439215954" expanded="true" signature="8229:8288" placeholder="update photo..." />
+            <element signature="e#650#657#0" expanded="true" />
+            <element signature="e#2142#2149#0" expanded="true" />
+            <marker date="1450441201096" expanded="true" signature="574:609" placeholder="select * fro..albums..." />
+            <marker date="1450441201096" expanded="true" signature="1158:1194" placeholder="select * fro..photos..." />
+            <marker date="1450441201096" expanded="true" signature="2020:2056" placeholder="select * fro..photos..." />
           </folding>
         </state>
       </provider>
@@ -1388,49 +1185,62 @@
           <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
           <folding>
             <element signature="e#906#907#0" expanded="true" />
-            <element signature="e#960#961#0" expanded="true" />
-            <element signature="e#1006#1007#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/AlbumTools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-          <folding>
-            <element signature="e#603#610#0" expanded="true" />
-            <element signature="e#2095#2102#0" expanded="true" />
-            <marker date="1450440177954" expanded="true" signature="527:562" placeholder="select * fro..albums..." />
-            <marker date="1450440177954" expanded="true" signature="1111:1147" placeholder="select * fro..photos..." />
-            <marker date="1450440177954" expanded="true" signature="1973:2009" placeholder="select * fro..photos..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/albums.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5172415">
-          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+        <state vertical-scroll-proportion="-5.862069">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.5172415">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Servlet/PhotoServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="76" />
+          <folding>
+            <marker date="1450441163460" expanded="true" signature="3814:3884" placeholder="insert into ..." />
+            <marker date="1450441163460" expanded="true" signature="5347:5383" placeholder="select * fro..photos..." />
+            <marker date="1450441163460" expanded="true" signature="5794:5841" placeholder="delete from ..." />
+            <marker date="1450441163460" expanded="true" signature="7630:7666" placeholder="select * fro..photos..." />
+            <marker date="1450441163460" expanded="true" signature="8136:8195" placeholder="update photo..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Servlet/AlbumServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="166" column="8" selection-start-line="166" selection-start-column="8" selection-end-line="175" selection-end-column="9" />
+          <folding>
+            <marker date="1450442202357" expanded="true" signature="2180:2238" placeholder="update album..." />
+            <marker date="1450442202357" expanded="true" signature="2291:2327" placeholder="select * fro..albums..." />
+            <marker date="1450442202357" expanded="true" signature="4455:4489" placeholder="delete from ..." />
+            <marker date="1450442202357" expanded="true" signature="4699:4746" placeholder="delete from ..." />
+            <marker date="1450442202357" expanded="true" signature="5840:5888" placeholder="insert into ..." />
+            <marker date="1450442202357" expanded="true" signature="7422:7458" placeholder="select * fro..albums..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Servlet/UserServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.47360247">
+          <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
           <folding>
-            <marker date="1450440595943" expanded="true" signature="2774:2818" placeholder="select * fro..users..." />
+            <marker date="1450442343834" expanded="true" signature="2795:2839" placeholder="select * fro..users..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/pics.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70546734">
-          <caret line="44" column="71" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>

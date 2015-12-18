@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 
 /**
  * Created by hp on 2015/10/16.
+ * 保证全局都使用唯一一个数据库
  */
 public class MyDatabase {
     private static Connection dbConn;

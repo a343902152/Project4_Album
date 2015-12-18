@@ -60,7 +60,6 @@ public class PhotoServlet extends HttpServlet {
             throws ServletException, IOException {
         String albumid=request.getParameter("albumid");
         String albumname=(String)request.getSession().getAttribute("album_name");
-        System.out.println("albumname="+albumname);
         String userid=(String)request.getSession().getAttribute("userid");
         String realpath = getServletContext().getRealPath("/") ;
         // 要保存的文件夹的路径 比如savaPath=/upload/images/a
@@ -102,9 +101,7 @@ public class PhotoServlet extends HttpServlet {
                 //使用FileOutputStream输出流将缓冲区的数据写入到指定的目录(savePath + "\\" + filename)当中
                 out.write(buffer, 0, len);
             }
-            //关闭输入流
             in.close();
-            //关闭输出流
             out.close();
             //删除处理文件上传时生成的临时文件
             item.delete();
@@ -131,7 +128,6 @@ public class PhotoServlet extends HttpServlet {
             System.out.println(message);
             e.printStackTrace();
         }
-
     }
 
     /**

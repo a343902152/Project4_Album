@@ -166,7 +166,7 @@ public class AlbumServlet extends HttpServlet {
         }
         // 本地新建文件夹
         String realpath = getServletContext().getRealPath("/") ;
-        String savePath=realpath+"upload\\images\\"+userid+"\\"+albumname;
+        String savePath=realpath+"\\upload\\images\\"+userid+"\\"+albumname;
         File file = new File(savePath);
         //判断上传文件的保存目录是否存在
         if (!file.exists() || !file.isDirectory()) {

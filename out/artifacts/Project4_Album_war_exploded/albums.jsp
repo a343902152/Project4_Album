@@ -17,7 +17,7 @@
 <body>
 	<header>
 		<div class="wrapper">
-			<a class="logo">My Photos</a>
+			<a class="logo">My Albums</a>
 			<a class="logout" href="user?action=logout"></a> <!-- 退出登录，修改url -->
 		</div>
 	</header>

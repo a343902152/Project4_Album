@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -89,6 +90,18 @@ public class UserServlet extends HttpServlet {
             ResultSet resultSet = pstmt.executeQuery();
             if(resultSet.next()){
                 System.out.println("login success");
+
+                // 本地新建文件夹
+                String realpath = getServletContext().getRealPath("/") ;
+                String savePath=realpath+"\\upload\\images\\"+userid;
+                File file = new File(savePath);
+                //判断上传文件的保存目录是否存在
+                if (!file.exists() || !file.isDirectory()) {
+                    System.out.println(savePath+"目录不存在，需要创建");
+                    //创建目录
+                    file.mkdir();
+                }
+
                 // 登陆成功，跳转
                 List<Album> albumList = AlbumTools.getAlbumList(userid);
 
