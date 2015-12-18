@@ -1,12 +1,12 @@
-package domain;
+package JavaBean;
 
 /**
  * Created by hp on 2015/12/8.
  */
 public class Album {
-    public String id;
-    public String name;
-    public String introducation;
+    private String id;
+    private String name;
+    private String introducation;
 
     public String getId() {
         return id;

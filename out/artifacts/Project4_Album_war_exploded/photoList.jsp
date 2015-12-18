@@ -1,5 +1,5 @@
-<%@ page import="domain.Photo" %>
-<%@ page import="domain.Album" %>
+<%@ page import="JavaBean.Photo" %>
+<%@ page import="JavaBean.Album" %>
 <%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
@@ -25,9 +25,9 @@
   </script>
 </head>
 <body>
-<form action="controller?action=uploadPhoto&albumid=${albumid}" method="post" enctype="multipart/form-data">
-  <p> 名字: <input type="text" name="photoname" ></p>
-  <p> 图片: <input type="file" name="image" value="上传图片" ></p>
+<form action="photo?action=uploadPhoto&albumid=${albumid}" method="post" enctype="multipart/form-data">
+  <p> 名字: <input type="text" photonmae="photoname" ></p>
+  <p> 图片: <input type="file" photonmae="image" value="上传图片" ></p>
   <p> <input type="submit" value="提交" ></p>
 </form>
 <%!
@@ -40,15 +40,19 @@
   albumid=(String)request.getSession().getAttribute("albumid");
   if(photoList!=null){
     for(Photo p:photoList){
-      String str=p.getId() + " " + p.getName() + " " + p.getIntroducation();
+      String str=p.getPhotoid() + " " + p.getPhotonmae() + " " + p.getIntroducation();
 
       String img="<img src=\""+basePath+"upload/images/"+p.getUrl()+ "\"> ";
-//      String img="<img src=\"/WebConnector/"+userid+"/"+p.getName()+"\"> ";
-//      String img="<img src=\""+p.getUrl()+"\">";
-      String a_update="<a href=\"controller?action=updatePhoto&albumid="+albumid+"&id="+p.id+"\">编辑 </a>";
-      String a_delete="<a href=\"controller?action=deletePhoto&albumid="+albumid+"&id="+p.id+"\">删除 </a>";
 
-      out.println("<p>"+str+"<a href=\"controller?action=viewPhoto&id="+p.id+"\">查看 </a>"+a_update+a_delete+"</p>");
+//      String img="<img src=\"/WebConnector/"+userid+"/"+p.getPhotonmae()+"\"> ";
+//      String img="<img src=\""+p.getUrl()+"\">";
+
+//      String a_update="<a href=\"photo?action=updatePhoto&albumid="+albumid+"&photoid="+p.photoid+"\">编辑 </a>";
+      String a_update="<a href='photo?action=updatePhoto&albumid="+albumid+"&photoid="+p.photoid+"'>编辑 </a>";
+
+      String a_delete="<a href=\"photo?action=deletePhoto&albumid="+albumid+"&photoid="+p.photoid+"&photoname="+p.photonmae+"\">删除 </a>";
+
+      out.println("<p>"+str+"<a href=\"photo?action=viewPhoto&photoid="+p.photoid+"\">查看 </a>"+a_update+a_delete+"</p>");
       out.println(img);
     }
   }else{
