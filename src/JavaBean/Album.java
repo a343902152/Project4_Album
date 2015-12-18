@@ -7,6 +7,8 @@ public class Album {
     private String id;
     private String name;
     private String introducation;
+    private String firstImgUrl;
+
 
     public String getId() {
         return id;
@@ -36,5 +38,14 @@ public class Album {
         this.id = id;
         this.name = name;
         this.introducation = introducation;
+        firstImgUrl="./static/data/test.jpg";
+    }
+
+    public String getFirstImgUrl() {
+        return firstImgUrl;
+    }
+
+    public void setFirstImgUrl(String firstImgUrl) {
+        this.firstImgUrl = firstImgUrl;
     }
 }

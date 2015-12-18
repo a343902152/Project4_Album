@@ -1,5 +1,6 @@
 package Servlet;
 
+import dao.AlbumTools;
 import dao.MyDatabase;
 import JavaBean.Album;
 import JavaBean.Photo;
@@ -120,7 +121,7 @@ public class PhotoServlet extends HttpServlet {
             preparedStatement.close();
 
             // 刷新一下页面
-            List<Photo> photoList=getPhotoList(albumid);
+            List<Photo> photoList=AlbumTools.getPhotoList(albumid);
             request.getSession().setAttribute("albumid",albumid);
             request.setAttribute("photo_list", photoList);
             request.setAttribute("album_name",albumname);
@@ -175,7 +176,7 @@ public class PhotoServlet extends HttpServlet {
             }
 
             // 显示图片
-            List<Photo> photoList=getPhotoList(albumid);
+            List<Photo> photoList= AlbumTools.getPhotoList(albumid);
             request.getSession().setAttribute("albumid",albumid);
             request.setAttribute("photo_list", photoList);
             request.setAttribute("album_name",albumname);
@@ -228,8 +229,7 @@ public class PhotoServlet extends HttpServlet {
                 String newPath=getServletContext().getRealPath("/")+"\\upload\\images\\"+photo.getUrl();
                 file.renameTo(new File(newPath));
             }
-
-            List<Photo> photoList=getPhotoList(albumid);
+            List<Photo> photoList=AlbumTools.getPhotoList(albumid);
             request.getSession().setAttribute("albumid",albumid);
             request.setAttribute("photo_list", photoList);
             request.setAttribute("album_name",albumname);
@@ -237,26 +237,6 @@ public class PhotoServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    private List<Photo> getPhotoList(String albumid){
-        String sql="select * from photos where albumid=?";
-        PreparedStatement preparedStatement;
-        List<Photo> list=new ArrayList<Photo>();
-        try{
-            preparedStatement=dbConn.prepareStatement(sql);
-            preparedStatement.setString(1,albumid);
-
-            ResultSet resultSet=preparedStatement.executeQuery();
-            while(resultSet.next()){
-                Photo photo=new Photo(resultSet.getString(1),resultSet.getString(2),
-                        resultSet.getString(3),resultSet.getString(4),resultSet.getString(5));
-                list.add(photo);
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return list;
     }
 
 }

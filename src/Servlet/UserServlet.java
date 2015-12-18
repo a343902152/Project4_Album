@@ -1,5 +1,6 @@
 package Servlet;
 
+import dao.AlbumTools;
 import dao.MyDatabase;
 import JavaBean.Album;
 
@@ -36,9 +37,6 @@ public class UserServlet extends HttpServlet {
             case "login":
                 System.out.println("begein to do login");
                 doLogin(request, response);
-                break;
-            case "register":
-                doRegister(request, response);
                 break;
             case "logout":
                 doLogout(request,response);
@@ -78,9 +76,7 @@ public class UserServlet extends HttpServlet {
             if(resultSet.next()){
                 System.out.println("login success");
                 // 登陆成功，跳转
-                // todo 获取列表要改成函数
-
-                List<Album> albumList = getAlbumList(userid);
+                List<Album> albumList = AlbumTools.getAlbumList(userid);
 
                 request.getSession().setAttribute("userid",userid);
                 request.getSession().setAttribute("album_list", albumList);
@@ -94,38 +90,5 @@ public class UserServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    private void doRegister(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        // todo
-        String userid="cc";
-        String psd="2";
-    }
-
-    /**
-     * 根据用户id，获取他拥有的相册list
-     * @param userid
-     * @return
-     */
-    private List<Album> getAlbumList(String userid){
-        String sql="select * from albums where userid=?";
-        PreparedStatement preparedStatement;
-        List<Album> list=new ArrayList<Album>();
-        try{
-            preparedStatement=dbConn.prepareStatement(sql);
-            preparedStatement.setString(1,userid);
-
-            ResultSet resultSet=preparedStatement.executeQuery();
-            while(resultSet.next()){
-                Album album=new Album(resultSet.getString(2),
-                        resultSet.getString(3),resultSet.getString(4));
-                list.add(album);
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-
-        return list;
     }
 }

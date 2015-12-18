@@ -1,6 +1,12 @@
 <%@ page import="JavaBean.Album" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -15,7 +21,6 @@
 			<a class="logout" href="user?action=logout"></a> <!-- 退出登录，修改url -->
 		</div>
 	</header>
-
 	<%!
 		String userid;
 	%>
@@ -28,7 +33,8 @@
 					if(albumList!=null){
 						System.out.println("albumlist,userid="+userid);
 						for(Album album:albumList){
-							String s_begin="<div class=\"card album\" style=\"background-image: url('./static/data/test.jpg');\" " +
+							String s_begin="<div class=\"card album\" style=\"" +
+									"background-image: url('"+basePath+"upload/images/"+album.getFirstImgUrl()+"');\" " +
 									"onclick=\"window.location.href='album?action=viewAlbum&id="+album.getId()+"';\">\n" +
 									"\t\t\t\t\t<div class=\"img\"></div>\n" +
 									"\t\t\t\t\t<div class=\"controller_bar\">";
@@ -61,7 +67,6 @@
 				<input id="submit_new_name" type="submit" value="submit" onclick="event.cancelBubble=true;" />
 			</form>
 		</div>
-		
 	</div>
 
 	<!-- 这是添加图片使用的表单，始终隐藏，不要修改action以外的属性 -->

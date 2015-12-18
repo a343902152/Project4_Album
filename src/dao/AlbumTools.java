@@ -24,21 +24,34 @@ public class AlbumTools {
      */
     public static List<Album> getAlbumList(String userid){
         String sql="select * from albums where userid=?";
-        PreparedStatement preparedStatement;
         List<Album> list=new ArrayList<Album>();
         try{
-            preparedStatement=dbConn.prepareStatement(sql);
+            PreparedStatement preparedStatement=dbConn.prepareStatement(sql);
             preparedStatement.setString(1,userid);
-
             ResultSet resultSet=preparedStatement.executeQuery();
             while(resultSet.next()){
                 Album album=new Album(resultSet.getString(2),
                         resultSet.getString(3),resultSet.getString(4));
                 list.add(album);
             }
+            preparedStatement.close();
+
+            String sqlPhoto = "select * from photos where albumid=?";
+            for (int i = 0; i < list.size(); i++) {
+                PreparedStatement tempPST = dbConn.prepareStatement(sqlPhoto);
+                tempPST.setString(1, list.get(i).getId());
+                ResultSet tempres = tempPST.executeQuery();
+                if (tempres.next()) {
+                    Photo photo = new Photo(tempres.getString(1), tempres.getString(2),
+                            tempres.getString(3), tempres.getString(4), tempres.getString(5));
+                    list.get(i).setFirstImgUrl(photo.getUrl());
+                    System.out.println(list.get(i).getFirstImgUrl());
+                }
+            }
         }catch (SQLException e){
             e.printStackTrace();
         }
+
         return list;
     }
 
