@@ -41,7 +41,7 @@
 			<nav>
 				<!-- 在这里放上退回链接 -->
 				<%
-					String s1="<a class=\"nav_albums\" href='albums.jsp'>返回</a>";
+					String s1="<a class=\"nav_albums\" href='user?action=getAlbumlist&userid="+userid+"'>返回</a>";
 					String s2="<a class=\"nav_now\">"+albumname+"</a>";
 					out.println(s1+s2);
 				%>

@@ -41,7 +41,21 @@ public class UserServlet extends HttpServlet {
             case "logout":
                 doLogout(request,response);
                 break;
+            case "getAlbumlist":
+                dogetAlbumlist(request,response);
+                break;
         }
+    }
+
+    private void dogetAlbumlist(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        String userid=request.getParameter("userid");
+        List<Album> albumList = AlbumTools.getAlbumList(userid);
+
+        request.getSession().setAttribute("userid",userid);
+        request.getSession().setAttribute("album_list", albumList);
+        request.getRequestDispatcher("albums.jsp").forward(request,response);
+
     }
 
     private void doLogout(HttpServletRequest request, HttpServletResponse response)
