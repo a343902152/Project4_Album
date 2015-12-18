@@ -1,5 +1,6 @@
 package Servlet;
 
+import dao.AlbumTools;
 import dao.MyDatabase;
 import JavaBean.Album;
 import JavaBean.Photo;
@@ -95,7 +96,7 @@ public class AlbumServlet extends HttpServlet {
             }
             // 修改photo里的url
 
-            List<Album> albumList = getAlbumList(userid);
+            List<Album> albumList = AlbumTools.getAlbumList(userid);
             request.getSession().setAttribute("album_list", albumList);
             request.getRequestDispatcher("albums.jsp").forward(request,response);
 
@@ -115,7 +116,7 @@ public class AlbumServlet extends HttpServlet {
         String userid=(String)request.getSession().getAttribute("userid");
         String albumid=request.getParameter("id");
 
-        // todo 首先删除photos中的数据+本地图片，然后再是删除相册
+        // 首先删除photos中的数据，然后再是删除相册（但是保留本地图片）
         try {
             String sqlDeletePhotos = "delete from photos where albumid=?";
             PreparedStatement dphotoPST=dbConn.prepareStatement(sqlDeletePhotos);
@@ -132,7 +133,7 @@ public class AlbumServlet extends HttpServlet {
         }catch (SQLException e){
             e.printStackTrace();
         }
-        List<Album> albumList = getAlbumList(userid);
+        List<Album> albumList = AlbumTools.getAlbumList(userid);
         request.getSession().setAttribute("album_list", albumList);
         request.getRequestDispatcher("albums.jsp").forward(request,response);
     }
@@ -172,11 +173,10 @@ public class AlbumServlet extends HttpServlet {
             System.out.println(savePath+"目录不存在，需要创建");
             //创建目录
             file.mkdir();
-            System.out.println("mkdir success");
         }
 
         System.out.println(changedLineCount);
-        List<Album> albumList = getAlbumList(userid);
+        List<Album> albumList = AlbumTools.getAlbumList(userid);
 
         request.getSession().setAttribute("album_list", albumList);
         request.getRequestDispatcher("albums.jsp").forward(request,response);
@@ -195,7 +195,6 @@ public class AlbumServlet extends HttpServlet {
         String albumname="null";
 
         try {
-            System.out.println("begin doviewalbum");
             String sqlSeleceAlbumName="select * from albums where albumid=?";
             PreparedStatement namePST=dbConn.prepareStatement(sqlSeleceAlbumName);
             namePST.setString(1,albumid);
@@ -205,8 +204,7 @@ public class AlbumServlet extends HttpServlet {
             }
             System.out.println("albumname="+albumname);
 
-            List<Photo> photoList=getPhotoList(albumid);
-            System.out.println("listsze="+photoList.size());
+            List<Photo> photoList=AlbumTools.getPhotoList(albumid);
             // 就显示照片
             request.getSession().setAttribute("albumid",albumid);
             request.getSession().setAttribute("album_name", albumname);
@@ -217,48 +215,4 @@ public class AlbumServlet extends HttpServlet {
         }
     }
 
-    /**
-     * 根据用户id，获取他拥有的相册list
-     * @param userid
-     * @return
-     */
-    private List<Album> getAlbumList(String userid){
-        String sql="select * from albums where userid=?";
-        PreparedStatement preparedStatement;
-        List<Album> list=new ArrayList<Album>();
-        try{
-            preparedStatement=dbConn.prepareStatement(sql);
-            preparedStatement.setString(1,userid);
-
-            ResultSet resultSet=preparedStatement.executeQuery();
-            while(resultSet.next()){
-                Album album=new Album(resultSet.getString(2),
-                        resultSet.getString(3),resultSet.getString(4));
-                list.add(album);
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return list;
-    }
-
-    private List<Photo> getPhotoList(String albumid){
-        String sql="select * from photos where albumid=?";
-        PreparedStatement preparedStatement;
-        List<Photo> list=new ArrayList<Photo>();
-        try{
-            preparedStatement=dbConn.prepareStatement(sql);
-            preparedStatement.setString(1,albumid);
-
-            ResultSet resultSet=preparedStatement.executeQuery();
-            while(resultSet.next()){
-                Photo photo=new Photo(resultSet.getString(1),resultSet.getString(2),
-                        resultSet.getString(3),resultSet.getString(4),resultSet.getString(5));
-                list.add(photo);
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return list;
-    }
 }

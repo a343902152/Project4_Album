@@ -34,7 +34,6 @@ public class PhotoServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-
         System.out.println("action=" + action);
         switch (action) {
             case "updatePhoto":
@@ -88,9 +87,6 @@ public class PhotoServlet extends HttpServlet {
 
             FileItem item=list.get(0); // 获取用户上传的文件item
             String fileurl=item.getName(); // 该文件的名字，比如img1.jpg
-//            String[] arr=fileurl.split("\\.");
-//            String imgname;
-//            imgname=arr[0]; // 截取名字部分，比如截取出img1
 
             //获取item中的上传文件的输入流
             InputStream in = item.getInputStream();
@@ -115,7 +111,6 @@ public class PhotoServlet extends HttpServlet {
             // 数据存到数据库里
             String sql="insert into photos(albumid,photoname,albumname,userid) values(?,?,?,?)";
             PreparedStatement preparedStatement=dbConn.prepareStatement(sql);
-//            System.out.println(albumid+imgname+"  "+savePath + "  "+File.separator + imgname);
             preparedStatement.setString(1, albumid);
             preparedStatement.setString(2,fileurl);
             preparedStatement.setString(3,albumname);
@@ -135,8 +130,6 @@ public class PhotoServlet extends HttpServlet {
             System.out.println(message);
             e.printStackTrace();
         }
-//         request.setAttribute("message",message);
-//         request.getRequestDispatcher("/message.jsp").forward(request, response);
 
     }
 
@@ -154,6 +147,7 @@ public class PhotoServlet extends HttpServlet {
         String albumid=request.getParameter("albumid");
 
         String photoname="null";
+        String albumname="null";
         try {
             String selectSql="select * from photos where photoid=?";
             PreparedStatement selectpst=dbConn.prepareStatement(selectSql);
@@ -161,8 +155,10 @@ public class PhotoServlet extends HttpServlet {
             ResultSet resultSet=selectpst.executeQuery();
             if(resultSet.next()){
                 photoname=resultSet.getString(4);
+                albumname=resultSet.getString(5);
             }
 
+            System.out.println("photo name="+photoname);
             String sql="delete from photos where userid=? and photoid=?";
             PreparedStatement preparedStatement=dbConn.prepareStatement(sql);
             preparedStatement.setString(1,userid);
@@ -171,22 +167,13 @@ public class PhotoServlet extends HttpServlet {
 
             // 删除本地的照片
             String realpath = getServletContext().getRealPath("/") ;
-            String savePath=realpath+"/upload/images/"+userid;
+            String savePath=realpath+"\\upload\\images\\"+userid+"\\"+albumname;
             File file=new File(savePath+"\\"+photoname);
+            System.out.println(savePath+"\\"+photoname);
             if(file.exists()){
-                System.out.println("delete savePath+\"/\"+photoname");
                 file.delete();
             }
 
-            // 显示相册名字到页面上
-            String sqlSeleceAlbumName="select * from albums where albumid=?";
-            PreparedStatement namePST=dbConn.prepareStatement(sqlSeleceAlbumName);
-            namePST.setInt(1,Integer.parseInt(albumid));
-            ResultSet res=namePST.executeQuery();
-            String albumname="null";
-            if(res.next()) {
-                albumname = res.getString(3);
-            }
             // 显示图片
             List<Photo> photoList=getPhotoList(albumid);
             request.getSession().setAttribute("albumid",albumid);

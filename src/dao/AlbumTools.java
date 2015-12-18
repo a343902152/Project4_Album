@@ -26,7 +26,6 @@ public class AlbumTools {
         String sql="select * from albums where userid=?";
         PreparedStatement preparedStatement;
         List<Album> list=new ArrayList<Album>();
-
         try{
             preparedStatement=dbConn.prepareStatement(sql);
             preparedStatement.setString(1,userid);
@@ -44,7 +43,7 @@ public class AlbumTools {
     }
 
 
-    private List<Photo> getPhotoList(String albumid){
+    public static List<Photo> getPhotoList(String albumid){
         String sql="select * from photos where albumid=?";
         PreparedStatement preparedStatement;
         List<Photo> list=new ArrayList<Photo>();
