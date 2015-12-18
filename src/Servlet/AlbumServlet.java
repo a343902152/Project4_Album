@@ -74,8 +74,8 @@ public class AlbumServlet extends HttpServlet {
             if(resultSet.next()){
                 curAlbumname=resultSet.getString(3);
             }
-            String cururl=userid+"/"+curAlbumname;
-            String newurl=userid+"/"+newAlbumname;
+            String cururl=userid+"\\"+curAlbumname;
+            String newurl=userid+"\\"+newAlbumname;
             PreparedStatement preparedStatement=dbConn.prepareStatement(sql);
             preparedStatement.setString(1,newAlbumname);
             preparedStatement.setInt(2, Integer.parseInt(albumid));
@@ -84,14 +84,14 @@ public class AlbumServlet extends HttpServlet {
 
             // 修改本地文件夹名
             String realpath = getServletContext().getRealPath("/") ;
-            String savePath=realpath+"/upload/images/";
-            String curpath=savePath+"/"+cururl;
+            String savePath=realpath+"\\upload\\images\\";
+            String curpath=savePath+"\\"+cururl;
             System.out.println(curpath);
-            File file=new File(savePath+"/"+cururl);
+            File file=new File(savePath+"\\"+cururl);
             if(file.exists()){
-                String newPath=getServletContext().getRealPath("/")+"/upload/images/"+newurl;
+                String newPath=getServletContext().getRealPath("/")+"\\upload\\images\\"+newurl;
                 System.out.println(newPath);
-                file.renameTo(new File(getServletContext().getRealPath("/")+"/upload/images/"+newurl));
+                file.renameTo(new File(getServletContext().getRealPath("/")+"\\upload\\images\\"+newurl));
             }
             // 修改photo里的url
 
@@ -165,13 +165,14 @@ public class AlbumServlet extends HttpServlet {
         }
         // 本地新建文件夹
         String realpath = getServletContext().getRealPath("/") ;
-        String savePath=realpath+"upload/images/"+userid+"/"+albumname;
+        String savePath=realpath+"upload\\images\\"+userid+"\\"+albumname;
         File file = new File(savePath);
         //判断上传文件的保存目录是否存在
-        if (!file.exists() && !file.isDirectory()) {
+        if (!file.exists() || !file.isDirectory()) {
             System.out.println(savePath+"目录不存在，需要创建");
             //创建目录
             file.mkdir();
+            System.out.println("mkdir success");
         }
 
         System.out.println(changedLineCount);
