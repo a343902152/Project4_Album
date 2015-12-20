@@ -101,10 +101,8 @@ public class UserServlet extends HttpServlet {
                     //创建目录
                     file.mkdir();
                 }
-
                 // 登陆成功，跳转
                 List<Album> albumList = AlbumTools.getAlbumList(userid);
-
                 request.getSession().setAttribute("userid",userid);
                 request.getSession().setAttribute("album_list", albumList);
                 request.getRequestDispatcher("albums.jsp").forward(request,response);

@@ -1,6 +1,7 @@
 package Servlet;
 
 import dao.AlbumTools;
+import dao.FileOperation;
 import dao.MyDatabase;
 import JavaBean.Album;
 import JavaBean.Photo;
@@ -118,18 +119,41 @@ public class AlbumServlet extends HttpServlet {
 
         // 首先删除photos中的数据，然后再是删除相册（但是保留本地图片）
         try {
+
+            // 删除本地
+            String curAlbumname="null";
+            String sqlGetPhotoUrl="select * from albums where albumid=?";
+            PreparedStatement selectpst=dbConn.prepareStatement(sqlGetPhotoUrl);
+            selectpst.setString(1,albumid);
+            ResultSet resultSet=selectpst.executeQuery();
+            if(resultSet.next()){
+                curAlbumname=resultSet.getString(3);
+            }
+
+
             String sqlDeletePhotos = "delete from photos where albumid=?";
             PreparedStatement dphotoPST=dbConn.prepareStatement(sqlDeletePhotos);
             dphotoPST.setInt(1,Integer.parseInt(albumid));
             dphotoPST.executeUpdate();
 
-            String sql = "delete from albums where userid=? and albumid=?";
 
+            String sql = "delete from albums where userid=? and albumid=?";
             PreparedStatement preparedStatement = dbConn.prepareStatement(sql);
             preparedStatement.setString(1, userid);
             preparedStatement.setInt(2, Integer.parseInt(albumid));
             preparedStatement.executeUpdate();
             preparedStatement.close();
+
+
+            // 修改本地文件夹名
+            String realpath = getServletContext().getRealPath("/") ;
+            String curpath=realpath+"\\upload\\images\\"+userid+"\\"+curAlbumname;
+            System.out.println("curpath="+curpath);
+            if(FileOperation.Delete(curpath)){
+                System.out.println("删除成功");
+            }else{
+                System.out.println("删除失败");
+            }
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -192,7 +216,7 @@ public class AlbumServlet extends HttpServlet {
             throws ServletException, IOException {
         // 不需要userid
         String albumid=request.getParameter("id");
-        String albumname="null";
+       String albumname="null";
 
         try {
             String sqlSeleceAlbumName="select * from albums where albumid=?";
