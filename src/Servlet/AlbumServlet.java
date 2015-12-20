@@ -86,17 +86,17 @@ public class AlbumServlet extends HttpServlet {
 
             // 修改本地文件夹名
             String realpath = getServletContext().getRealPath("/") ;
-            String savePath=realpath+"\\upload\\images\\";
-            String curpath=savePath+"\\"+cururl;
-            System.out.println(curpath);
-            File file=new File(savePath+"\\"+cururl);
-            if(file.exists()){
-                String newPath=getServletContext().getRealPath("/")+"\\upload\\images\\"+newurl;
-                System.out.println(newPath);
-                file.renameTo(new File(getServletContext().getRealPath("/")+"\\upload\\images\\"+newurl));
-            }
-            // 修改photo里的url
+            String curpath=realpath+"\\upload\\images\\"+cururl;
+            String newPath=realpath+"\\upload\\images\\"+newurl;
 
+            System.out.println(curpath);
+            if(FileOperation.Rename(curpath,newPath)){
+                System.out.println("重命名成功");
+            }else{
+                System.out.println("重命名失败");
+            }
+
+            // 修改photo里的url
             List<Album> albumList = AlbumTools.getAlbumList(userid);
             request.getSession().setAttribute("album_list", albumList);
             request.getRequestDispatcher("albums.jsp").forward(request,response);
@@ -117,10 +117,8 @@ public class AlbumServlet extends HttpServlet {
         String userid=(String)request.getSession().getAttribute("userid");
         String albumid=request.getParameter("id");
 
-        // 首先删除photos中的数据，然后再是删除相册（但是保留本地图片）
+        // 首先删除photos中的数据，然后再是删除相册，然后删除本地数据
         try {
-
-            // 删除本地
             String curAlbumname="null";
             String sqlGetPhotoUrl="select * from albums where albumid=?";
             PreparedStatement selectpst=dbConn.prepareStatement(sqlGetPhotoUrl);
@@ -129,7 +127,6 @@ public class AlbumServlet extends HttpServlet {
             if(resultSet.next()){
                 curAlbumname=resultSet.getString(3);
             }
-
 
             String sqlDeletePhotos = "delete from photos where albumid=?";
             PreparedStatement dphotoPST=dbConn.prepareStatement(sqlDeletePhotos);
@@ -145,7 +142,7 @@ public class AlbumServlet extends HttpServlet {
             preparedStatement.close();
 
 
-            // 修改本地文件夹名
+            // 删除本地文件夹名
             String realpath = getServletContext().getRealPath("/") ;
             String curpath=realpath+"\\upload\\images\\"+userid+"\\"+curAlbumname;
             System.out.println("curpath="+curpath);
@@ -154,6 +151,7 @@ public class AlbumServlet extends HttpServlet {
             }else{
                 System.out.println("删除失败");
             }
+
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -191,14 +189,11 @@ public class AlbumServlet extends HttpServlet {
         // 本地新建文件夹
         String realpath = getServletContext().getRealPath("/") ;
         String savePath=realpath+"\\upload\\images\\"+userid+"\\"+albumname;
-        File file = new File(savePath);
-        //判断上传文件的保存目录是否存在
-        if (!file.exists() || !file.isDirectory()) {
-            System.out.println(savePath+"目录不存在，需要创建");
-            //创建目录
-            file.mkdir();
+        if(FileOperation.Mkdir(savePath)){
+            System.out.println("新建文件夹成功");
+        }else{
+            System.out.println("新建文件夹失败");
         }
-
         System.out.println(changedLineCount);
         List<Album> albumList = AlbumTools.getAlbumList(userid);
 

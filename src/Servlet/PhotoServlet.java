@@ -1,6 +1,7 @@
 package Servlet;
 
 import dao.AlbumTools;
+import dao.FileOperation;
 import dao.MyDatabase;
 import JavaBean.Album;
 import JavaBean.Photo;
@@ -65,13 +66,9 @@ public class PhotoServlet extends HttpServlet {
         // 要保存的文件夹的路径 比如savaPath=/upload/images/a
         String savePath=realpath+"\\upload\\images\\"+userid+"\\"+albumname;
 
-        File file = new File(savePath);
-        //判断上传文件的保存目录是否存在
-        if (!file.exists() && !file.isDirectory()) {
-            System.out.println(savePath+"目录不存在，需要创建");
-            //创建目录
-            file.mkdir();
-        }
+        // 如果目录不存在，则新建文件夹
+        FileOperation.Mkdir(savePath);
+
         //消息提示
         String message = "";
         try{
@@ -219,12 +216,10 @@ public class PhotoServlet extends HttpServlet {
             // 修改本地图片的名字
             String realpath = getServletContext().getRealPath("/") ;
             String curPath=realpath+"\\upload\\images\\"+photo.getUrl();
-            File file=new File(curPath);
-            if(file.exists()){
-                photo.setPhotoname(newPhotoname);
-                String newPath=getServletContext().getRealPath("/")+"\\upload\\images\\"+photo.getUrl();
-                file.renameTo(new File(newPath));
-            }
+            photo.setPhotoname(newPhotoname);
+            String newPath=realpath+"\\upload\\images\\"+photo.getUrl();
+            FileOperation.Rename(curPath,newPath);
+
             List<Photo> photoList=AlbumTools.getPhotoList(albumid);
             request.getSession().setAttribute("albumid",albumid);
             request.setAttribute("photo_list", photoList);
