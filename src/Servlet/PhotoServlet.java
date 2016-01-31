@@ -64,7 +64,7 @@ public class PhotoServlet extends HttpServlet {
         String userid=(String)request.getSession().getAttribute("userid");
         String realpath = getServletContext().getRealPath("/") ;
         // 要保存的文件夹的路径 比如savaPath=/upload/images/a
-        String savePath=realpath+"\\upload\\images\\"+userid+"\\"+albumname;
+        String savePath=realpath+"/upload/images/"+userid+"/"+albumname;
 
         // 如果目录不存在，则新建文件夹
         FileOperation.Mkdir(savePath);
@@ -161,12 +161,8 @@ public class PhotoServlet extends HttpServlet {
 
             // 删除本地的照片
             String realpath = getServletContext().getRealPath("/") ;
-            String savePath=realpath+"\\upload\\images\\"+userid+"\\"+albumname;
-            File file=new File(savePath+"\\"+photoname);
-            System.out.println(savePath+"\\"+photoname);
-            if(file.exists()){
-                file.delete();
-            }
+            String savePath=realpath+"/upload/images/"+userid+"/"+albumname+"/"+photoname;
+            FileOperation.Delete(savePath);
 
             // 显示图片
             List<Photo> photoList= AlbumTools.getPhotoList(albumid);
@@ -215,9 +211,9 @@ public class PhotoServlet extends HttpServlet {
 
             // 修改本地图片的名字
             String realpath = getServletContext().getRealPath("/") ;
-            String curPath=realpath+"\\upload\\images\\"+photo.getUrl();
+            String curPath=realpath+"/upload/images/"+photo.getUrl();
             photo.setPhotoname(newPhotoname);
-            String newPath=realpath+"\\upload\\images\\"+photo.getUrl();
+            String newPath=realpath+"/upload/images/"+photo.getUrl();
             FileOperation.Rename(curPath,newPath);
 
             List<Photo> photoList=AlbumTools.getPhotoList(albumid);

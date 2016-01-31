@@ -76,8 +76,8 @@ public class AlbumServlet extends HttpServlet {
             if(resultSet.next()){
                 curAlbumname=resultSet.getString(3);
             }
-            String cururl=userid+"\\"+curAlbumname;
-            String newurl=userid+"\\"+newAlbumname;
+            String cururl=userid+"/"+curAlbumname;
+            String newurl=userid+"/"+newAlbumname;
             PreparedStatement preparedStatement=dbConn.prepareStatement(sql);
             preparedStatement.setString(1,newAlbumname);
             preparedStatement.setInt(2, Integer.parseInt(albumid));
@@ -86,15 +86,26 @@ public class AlbumServlet extends HttpServlet {
 
             // 修改本地文件夹名
             String realpath = getServletContext().getRealPath("/") ;
-            String curpath=realpath+"\\upload\\images\\"+cururl;
-            String newPath=realpath+"\\upload\\images\\"+newurl;
+            String curpath=realpath+"/upload/images/"+cururl;
+            String newPath=realpath+"/upload/images/"+newurl;
 
             System.out.println(curpath);
+
             if(FileOperation.Rename(curpath,newPath)){
                 System.out.println("重命名成功");
             }else{
                 System.out.println("重命名失败");
+                return ;
             }
+
+            // 2016年2月1日 03:12:40 添加，更新photo里的albumname
+
+            String strUpdatephotos="update photos set albumname=? where albumid=? and userid=? ";
+            PreparedStatement preparedStatementPhoto=dbConn.prepareStatement(strUpdatephotos);
+            preparedStatementPhoto.setString(1,newAlbumname);
+            preparedStatementPhoto.setInt(2,Integer.parseInt(albumid));
+            preparedStatementPhoto.setString(3,userid);
+            preparedStatementPhoto.executeUpdate();
 
             // 修改photo里的url
             List<Album> albumList = AlbumTools.getAlbumList(userid);
@@ -127,12 +138,10 @@ public class AlbumServlet extends HttpServlet {
             if(resultSet.next()){
                 curAlbumname=resultSet.getString(3);
             }
-
             String sqlDeletePhotos = "delete from photos where albumid=?";
             PreparedStatement dphotoPST=dbConn.prepareStatement(sqlDeletePhotos);
             dphotoPST.setInt(1,Integer.parseInt(albumid));
             dphotoPST.executeUpdate();
-
 
             String sql = "delete from albums where userid=? and albumid=?";
             PreparedStatement preparedStatement = dbConn.prepareStatement(sql);
@@ -141,10 +150,9 @@ public class AlbumServlet extends HttpServlet {
             preparedStatement.executeUpdate();
             preparedStatement.close();
 
-
             // 删除本地文件夹名
             String realpath = getServletContext().getRealPath("/") ;
-            String curpath=realpath+"\\upload\\images\\"+userid+"\\"+curAlbumname;
+            String curpath=realpath+"/upload/images/"+userid+"/"+curAlbumname;
             System.out.println("curpath="+curpath);
             if(FileOperation.Delete(curpath)){
                 System.out.println("删除成功");
@@ -188,7 +196,7 @@ public class AlbumServlet extends HttpServlet {
         }
         // 本地新建文件夹
         String realpath = getServletContext().getRealPath("/") ;
-        String savePath=realpath+"\\upload\\images\\"+userid+"\\"+albumname;
+        String savePath=realpath+"/upload/images/"+userid+"/"+albumname;
         if(FileOperation.Mkdir(savePath)){
             System.out.println("新建文件夹成功");
         }else{

@@ -22,5 +22,6 @@
     <orderEntry type="library" scope="PROVIDED" name="apache-tomcat-8.0.30" level="application_server_libraries" />
     <orderEntry type="library" name="commons-fileupload-1.3.1" level="project" />
     <orderEntry type="library" name="sqljdbc42" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.30-bin" level="project" />
   </component>
 </module>

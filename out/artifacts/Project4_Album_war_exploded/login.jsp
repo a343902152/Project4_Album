@@ -23,9 +23,9 @@
 		<div class="login_panel">
 			<a class="logo">My Photos</a>
 			<form action="user?action=login" method="POST" onsubmit="return checkForm(form1)">
-				<input type="text" name="userid" id="username" placeholder="username">
-				<input type="password" name="password" id="password" placeholder="password">
-				<input type="submit" name="submit" id="submit" value="提交">
+				<input type="text" name="userid" id="username" placeholder="username(测试账号a)">
+				<input type="password" name="password" id="password" placeholder="password(测试密码1)">
+				<input type="submit" name="submit" id="submit" value="登录">
 			</form>
 		</div>
 	</div>

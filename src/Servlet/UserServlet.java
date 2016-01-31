@@ -1,6 +1,7 @@
 package Servlet;
 
 import dao.AlbumTools;
+import dao.FileOperation;
 import dao.MyDatabase;
 import JavaBean.Album;
 
@@ -93,14 +94,9 @@ public class UserServlet extends HttpServlet {
 
                 // 本地新建文件夹
                 String realpath = getServletContext().getRealPath("/") ;
-                String savePath=realpath+"\\upload\\images\\"+userid;
-                File file = new File(savePath);
-                //判断上传文件的保存目录是否存在
-                if (!file.exists() || !file.isDirectory()) {
-                    System.out.println(savePath+"目录不存在，需要创建");
-                    //创建目录
-                    file.mkdir();
-                }
+                String savePath=realpath+"/upload/images/"+userid;
+                FileOperation.Mkdir(savePath);
+
                 // 登陆成功，跳转
                 List<Album> albumList = AlbumTools.getAlbumList(userid);
                 request.getSession().setAttribute("userid",userid);

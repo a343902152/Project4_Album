@@ -9,17 +9,15 @@ import java.sql.DriverManager;
  */
 public class MyDatabase {
     private static Connection dbConn;
-
     private MyDatabase(){
     }
 
     private static void DBInit(){
         //连接数据库
-        String driverName="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        String dbURL="jdbc:sqlserver://localhost:1433;DatabaseName=networkAlbum";
-
-        String userName="sa";
-        String userPwd="123321";
+        String driverName="com.mysql.jdbc.Driver";
+        String dbURL="jdbc:mysql://localhost/netAlbum";
+        String userName="root";
+        String userPwd="123";
         try{
             Class.forName(driverName);
             dbConn= DriverManager.getConnection(dbURL, userName, userPwd);
@@ -37,5 +35,4 @@ public class MyDatabase {
         }
         return dbConn;
     }
-
 }
